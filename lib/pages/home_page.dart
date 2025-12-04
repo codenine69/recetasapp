@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recetasapp/models/receta_model.dart';
 import 'package:recetasapp/widgets/form_item_widget.dart';
-import 'package:recetasapp/widgets/receta_card_widget.dart';
-// Para mostrar alertas, aunque usaremos SnackBar simple
+import 'package:recetasapp/widgets/receta_card_widget.dart'; 
 import 'package:another_flushbar/flushbar.dart'; 
 
 class HomePage extends StatefulWidget {
@@ -80,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // --- Título (TextFormField) ---
+                  //  titulo
                   TextFormField(
                     controller: _titleController,
                     validator: (value) {
@@ -101,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: 16),
                   
-                  // --- DropdownButtonFormField para Tipo de Receta ---
+                  //  DropdownButtonFormField para Tipo de Receta 
                   DropdownButtonFormField<String>(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -136,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 16),
 
 
-                  // --- Preparación (TextFormField) ---
+                  //  Preparación (TextFormField) 
                   TextFormField(
                     controller: _preparationController,
                     maxLines: 3,
@@ -158,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: 16),
 
-                  // --- Imagen URL (TextFormField) ---
+                  //  Imagen URL (TextFormField) 
                   TextFormField(
                     controller: _imageController,
                     validator: (value) {
@@ -180,12 +179,12 @@ class _HomePageState extends State<HomePage> {
                   
                   SizedBox(height: 16),
                   
-                  // --- Botón de Registro con Validación ---
+                  //  Botón de Registro con Validación 
                   ElevatedButton(
                     onPressed: () {
-                      // Validar el Form antes de agregar la receta
+                      // Validar el Form
                       if (_formKey.currentState!.validate()) {
-                        // Formulario válido
+                        // Formulario valido
                         RecetaModel recetaAux = RecetaModel(
                           title: _titleController.text,
                           preparation: _preparationController.text,
